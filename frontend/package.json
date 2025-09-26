@@ -1,0 +1,19 @@
+{
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build"
+    },
+    "devDependencies": {
+        "vite": "^6.0.11"
+    },
+    "dependencies": {
+        "@inertiajs/inertia-react": "^0.8.1",
+        "@inertiajs/progress": "^0.2.7",
+        "@inertiajs/react": "^2.0.3",
+        "@types/node": "^22.10.10",
+        "@vitejs/plugin-react": "^4.3.4",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1",
+        "react-if": "^4.1.6"
+    }
+}

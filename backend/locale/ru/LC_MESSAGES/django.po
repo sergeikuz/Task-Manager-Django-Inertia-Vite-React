@@ -1,0 +1,452 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-09 12:11+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
+"(n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: backend/forms.py:11 backend/forms.py:13
+#: backend/users/forms.py:33 backend/users/forms.py:43
+#: backend/users/models.py:30
+msgid "Username"
+msgstr "Имя пользователя"
+
+#: backend/forms.py:16 backend/forms.py:17
+#: backend/users/forms.py:9 backend/users/forms.py:11
+msgid "Password"
+msgstr "Пароль"
+
+#: backend/forms.py:22
+msgid "Incorrect username or password.Check the character case."
+msgstr "Неправильное имя пользователя или пароль. Проверьте регистр"
+
+#: backend/forms.py:24
+msgid "The account has been deactivated."
+msgstr "Аккаунт был деактивирован"
+
+#: backend/labels/forms.py:11 backend/labels/models.py:10
+#: backend/statuses/forms.py:10 backend/statuses/forms.py:13
+#: backend/statuses/models.py:8 backend/tasks/forms.py:19
+#: backend/tasks/forms.py:20 backend/tasks/models.py:12
+#: backend/templates/labels/labels_index.html:12
+#: backend/templates/statuses/statuses_index.html:14
+#: backend/templates/tasks/tasks_index.html:21
+msgid "Name"
+msgstr "Имя"
+
+#: backend/labels/forms.py:15 backend/tasks/forms.py:62
+msgid "Label"
+msgstr "Метка"
+
+#: backend/labels/models.py:13 backend/statuses/models.py:12
+#: backend/tasks/models.py:40
+#: backend/templates/labels/labels_index.html:13
+#: backend/templates/statuses/statuses_index.html:15
+#: backend/templates/tasks/tasks_detail.html:19
+#: backend/templates/tasks/tasks_index.html:25
+#: backend/templates/users/user_list.html:15
+msgid "Created at"
+msgstr "Дата создания"
+
+#: backend/labels/models.py:16 backend/statuses/models.py:15
+#: backend/tasks/models.py:43
+msgid "Updated at"
+msgstr "Дата обновления"
+
+#: backend/labels/models.py:17 backend/labels/views.py:54
+msgid "Label is in use and cannot be deleted."
+msgstr "Невозможно удалить метку потому что она используется"
+
+#: backend/labels/views.py:23
+msgid "Label created successfully"
+msgstr "Метка успешно создана"
+
+#: backend/labels/views.py:24
+msgid "Create label"
+msgstr "Создать метку"
+
+#: backend/labels/views.py:25 backend/statuses/views.py:24
+#: backend/tasks/views.py:40
+msgid "Create"
+msgstr "Создать"
+
+#: backend/labels/views.py:37
+msgid "Label updated successfully"
+msgstr "Метка успешно изменена"
+
+#: backend/labels/views.py:38
+msgid "Edit label"
+msgstr "Изменить метку"
+
+#: backend/labels/views.py:39 backend/statuses/views.py:39
+#: backend/tasks/views.py:55
+#: backend/templates/statuses/statuses_index.html:25
+#: backend/templates/tasks/tasks_index.html:39
+#: backend/templates/users/user_list.html:26
+#: backend/users/views.py:41
+msgid "Edit"
+msgstr "Изменить"
+
+#: backend/labels/views.py:53
+msgid "Label deleted successfully"
+msgstr "Метка успешно удалена"
+
+#: backend/labels/views.py:55
+msgid "Delete label"
+msgstr "Удаление метки"
+
+#: backend/mixins.py:8
+msgid "You are not logged in! Please log in"
+msgstr "Вы не авторизованы! Пожалуйста, выполните вход."
+
+#: backend/statuses/models.py:17 backend/statuses/views.py:55
+msgid "Cannot delete status because it is in use."
+msgstr "Невозможно удалить статус потому что он используется"
+
+#: backend/statuses/models.py:20
+msgid "Task status"
+msgstr "Статус задачи"
+
+#: backend/statuses/models.py:21
+msgid "Task statuses"
+msgstr "Статусы задач"
+
+#: backend/statuses/views.py:22
+msgid "The status was created successfully"
+msgstr "Статус успешно создан"
+
+#: backend/statuses/views.py:23
+#: backend/templates/statuses/statuses_index.html:9
+msgid "Create status"
+msgstr "Создать статус"
+
+#: backend/statuses/views.py:37
+msgid "The status was updated successfully"
+msgstr "Статус успешно изменен"
+
+#: backend/statuses/views.py:38
+msgid "Edit stutus"
+msgstr "Изменение статуса"
+
+#: backend/statuses/views.py:54
+msgid "The status was deleted successfully"
+msgstr "Статус успешно удален"
+
+#: backend/statuses/views.py:56
+msgid "Delete status"
+msgstr "Удалить статус"
+
+#: backend/tasks/forms.py:23 backend/tasks/forms.py:24
+#: backend/tasks/models.py:13
+#: backend/templates/tasks/tasks_detail.html:15
+msgid "Description"
+msgstr "Описание"
+
+#: backend/tasks/forms.py:27 backend/tasks/models.py:18
+#: backend/templates/tasks/tasks_detail.html:16
+#: backend/templates/tasks/tasks_index.html:22
+msgid "Status"
+msgstr "Статус"
+
+#: backend/tasks/forms.py:34 backend/tasks/forms.py:57
+#: backend/tasks/models.py:30
+#: backend/templates/tasks/tasks_detail.html:18
+#: backend/templates/tasks/tasks_index.html:24
+msgid "Executor"
+msgstr "Исполнитель"
+
+#: backend/tasks/forms.py:40 backend/tasks/models.py:35
+#: backend/templates/base.html:30
+#: backend/templates/labels/labels_index.html:6
+#: backend/templates/tasks/tasks_detail.html:20
+msgid "Labels"
+msgstr "Метки"
+
+#: backend/tasks/forms.py:66
+msgid "Only my tasks"
+msgstr "Только свои задачи"
+
+#: backend/tasks/models.py:24
+#: backend/templates/tasks/tasks_detail.html:17
+#: backend/templates/tasks/tasks_index.html:23
+msgid "Owner"
+msgstr "Создатель"
+
+#: backend/tasks/views.py:38
+msgid "Task created successfully"
+msgstr "Задача успешно создана"
+
+#: backend/tasks/views.py:39
+#: backend/templates/tasks/tasks_index.html:8
+msgid "Create task"
+msgstr "Создать задачу"
+
+#: backend/tasks/views.py:53
+msgid "Task updated successfully"
+msgstr "Задача успешно изменена"
+
+#: backend/tasks/views.py:54
+msgid "Edit task"
+msgstr "Изменение задачи"
+
+#: backend/tasks/views.py:71
+msgid "Task successfully deleted"
+msgstr "Задача успешно удалена"
+
+#: backend/tasks/views.py:72
+msgid "A task can only be deleted by its author"
+msgstr "Задачу может удалить только ее автор"
+
+#: backend/tasks/views.py:73
+msgid "Delete task"
+msgstr "Удаление задачи"
+
+#: backend/templates/base.html:10
+msgid "Task Manager Hexlet"
+msgstr ""
+
+#: backend/templates/base.html:16
+msgid "Task manager"
+msgstr "Менеджер задач"
+
+#: backend/templates/base.html:23
+#: backend/templates/users/user_list.html:8
+#: backend/users/models.py:88
+msgid "Users"
+msgstr "Пользователи"
+
+#: backend/templates/base.html:27
+#: backend/templates/statuses/statuses_index.html:8
+msgid "Statuses"
+msgstr "Статусы"
+
+#: backend/templates/base.html:34
+#: backend/templates/tasks/tasks_index.html:7
+msgid "Tasks"
+msgstr "Задачи"
+
+#: backend/templates/base.html:39
+msgid "Logout"
+msgstr "Выход"
+
+#: backend/templates/base.html:44
+#: backend/templates/registration/login.html:13
+#: backend/templates/registration/login.html:17
+#: backend/templates/views.py:21 backend/views.py:21
+msgid "Login"
+msgstr "Вход"
+
+#: backend/templates/base.html:47
+msgid "Registration"
+msgstr "Регистрация"
+
+#: backend/templates/general_delete_form.html:11
+msgid "Are you sure you want to delete"
+msgstr "Вы уверены, что действительно хотите удалить"
+
+#: backend/templates/general_delete_form.html:12
+msgid "Yes, delete"
+msgstr "Да, удалить"
+
+#: backend/templates/index.html:6
+msgid "Hello, World!"
+msgstr "Добро пожаловать!"
+
+#: backend/templates/labels/labels_index.html:7
+msgid "Create Label"
+msgstr "Создать метку"
+
+#: backend/templates/labels/labels_index.html:11
+#: backend/templates/statuses/statuses_index.html:13
+#: backend/templates/tasks/tasks_index.html:20
+#: backend/templates/users/user_list.html:12
+msgid "ID"
+msgstr "ID"
+
+#: backend/templates/labels/labels_index.html:24
+#: backend/templates/tasks/tasks_detail.html:26
+msgid "Update"
+msgstr "Изменить"
+
+#: backend/templates/labels/labels_index.html:25
+#: backend/templates/statuses/statuses_index.html:26
+#: backend/templates/tasks/tasks_detail.html:27
+#: backend/templates/tasks/tasks_index.html:40
+#: backend/templates/users/user_list.html:27
+msgid "Delete"
+msgstr "Удалить"
+
+#: backend/templates/tasks/tasks_detail.html:8
+msgid "Task detail"
+msgstr "Просмотр задачи"
+
+#: backend/templates/tasks/tasks_detail.html:14
+msgid "Details"
+msgstr "Просмотр задачи"
+
+#: backend/templates/tasks/tasks_index.html:13
+msgid "Show"
+msgstr "Показать"
+
+#: backend/templates/users/user_list.html:13
+msgid "Name of user"
+msgstr "Имя пользователя"
+
+#: backend/templates/users/user_list.html:14
+msgid "Full name"
+msgstr "Полное имя"
+
+#: backend/templates/views.py:13 backend/views.py:13
+msgid "You are logged in"
+msgstr "Вы залогинены"
+
+#: backend/templates/views.py:18 backend/views.py:18
+msgid ""
+"Please enter the correct username and password. Both fields can be case-"
+"sensitive."
+msgstr ""
+"Пожалуйста, введите правильные имя пользователя и пароль. Оба поля могут "
+"быть чувствительны к регистру."
+
+#: backend/templates/views.py:22 backend/views.py:22
+msgid "Log in"
+msgstr "Войти"
+
+#: backend/templates/views.py:31 backend/views.py:31
+msgid "You are logged out"
+msgstr "Вы разлогинены"
+
+#: backend/users/forms.py:13
+msgid "Password must contain at least 3 characters"
+msgstr "Ваш пароль должен содержать как минимум 3 символа."
+
+#: backend/users/forms.py:17 backend/users/forms.py:20
+msgid "Password confirmation"
+msgstr "Подтверждение пароля"
+
+#: backend/users/forms.py:22
+msgid "Enter the same password as before, for verification."
+msgstr "Для подтверждения введите, пожалуйста, пароль ещё раз."
+
+#: backend/users/forms.py:31 backend/users/forms.py:37
+msgid "First name"
+msgstr "Имя"
+
+#: backend/users/forms.py:32 backend/users/forms.py:40
+#: backend/users/models.py:26
+msgid "Last name"
+msgstr "Фамилия"
+
+#: backend/users/forms.py:48
+msgid ""
+"Required field. No more than 150 symbols. Only letters, digits and symbols "
+"@/./+/-/_."
+msgstr ""
+"Обязательное поле. Не более 150 символов. Только буквы, цифры и символы @/./"
+"+/-/_."
+
+#: backend/users/forms.py:58
+msgid ""
+"The entered password is too short. It must contain at least 3 characters."
+msgstr ""
+"Введённый пароль слишком короткий. Он должен содержать не менее 3 символов"
+
+#: backend/users/forms.py:68
+msgid "Passwords didn't match."
+msgstr "Пароли не совпадают"
+
+#: backend/users/models.py:25
+msgid "First Name"
+msgstr "Имя"
+
+#: backend/users/models.py:40
+msgid "active"
+msgstr "активировать"
+
+#: backend/users/models.py:43
+msgid ""
+"Designates whether this user should be treated as active. Unselect this "
+"instead of deleting accounts."
+msgstr ""
+"Указывает, следует ли считать этого пользователя активным. Снимите флажок "
+"вместо удаления учетных записей."
+
+#: backend/users/models.py:48
+msgid "staff status"
+msgstr "Статус персонала"
+
+#: backend/users/models.py:51
+msgid "Designates whether the user can log into this admin site."
+msgstr "Определяет, может ли пользователь войти на этот сайт администратора"
+
+#: backend/users/models.py:87
+msgid "User"
+msgstr "Пользователь"
+
+#: backend/users/views.py:22
+msgid "The user has been successfully registered"
+msgstr "Пользователь успешно зарегистрирован"
+
+#: backend/users/views.py:23
+msgid "Register User"
+msgstr "Зарегистрировать пользователя"
+
+#: backend/users/views.py:24
+msgid "Register"
+msgstr "Зарегистрировать"
+
+#: backend/users/views.py:37 backend/users/views.py:65
+msgid "You don't have the rights to change it."
+msgstr "У вас нет прав для изменения."
+
+#: backend/users/views.py:38
+msgid "User successfully edited"
+msgstr "Пользователь успешно изменен"
+
+#: backend/users/views.py:39 backend/users/views.py:70
+msgid "You are not registered ! Please log in"
+msgstr "Вы не зарегистрированны! Пожалуйста войдите"
+
+#: backend/users/views.py:40
+msgid "Edit User"
+msgstr "Изменить пользователя"
+
+#: backend/users/views.py:66
+msgid "User successfully deleted"
+msgstr "Пользователь успешно удален"
+
+#: backend/users/views.py:68
+msgid "It is not possible to delete a user because it is being used"
+msgstr "Удалить пользователя невозможно, поскольку он используется"
+
+#: backend/users/views.py:71
+msgid "Delete user"
+msgstr "Удалить пользователя"
+
+#~| msgid "You do not have permission to edit this user."
+#~ msgid "You do not have permission to delete this user."
+#~ msgstr "У вас нет прав на редактирование этого пользователя."
+
+#~ msgid "Profile deleted successfully!"
+#~ msgstr "Профиль успешно удален"
+
+#~ msgid "Profile updated successfully!"
+#~ msgstr "Профиль успешно изменен!"
+
+#~ msgid "Account created successfully! You can now log in."
+#~ msgstr "Учетная запись успешно создана! Теперь вы можете войти в систему."

@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load django_bootstrap5 %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+
+{% block content %}
+
+<h1 class="h1 text-left">{% trans "Users" %}</h1>
+<table class="table table-sm table-striped" style="border-collapse: collapse; width: 100%;">
+    <thead>
+        <tr>
+            <th>{% trans "ID" %}</th>
+            <th>{% trans "Name of user" %}</th>
+	    <th>{% trans "Full name" %}</th>
+            <th>{% trans "Created at" %}</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for user in users %}
+	    <tr style="background-color: {% cycle '#f9f9f9' 'white' %};">
+            <td>{{ user.id }}</td>
+            <td>{{ user.username }}</td>
+	    <td>{{ user.first_name }} {{ user.last_name }}</td>
+            <td>{{ user.created_at|date:"Y-m-d H:i" }}</td>
+            <td>
+                <a class="btn btn-link d-block" href="{% url 'users:user_update' user.id %}">{% trans "Edit" %}</a>
+                <a class="btn btn-link d-block" href="{% url 'users:user_delete' user.id %}">{% trans "Delete" %}</a>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

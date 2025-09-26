@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load django_bootstrap5 %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+
+{% block content %}
+
+<h2>{% translate view.form_title %}</h2>
+<form method="post">
+    {% csrf_token %}
+    <p>{% translate 'Are you sure you want to delete' %} {{ object.name }}?</p>
+    <button class="btn btn-small btn-danger" type="submit">{% translate 'Yes, delete' %}</button>
+</form>
+
+{% endblock %}
+
+

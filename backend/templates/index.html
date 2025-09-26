@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+
+{% block content %}
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+
+<body>
+<header class="container mt-4 mb-4">
+    <a href="https://render.com">
+<img src="{% static "homepage/render-banner.webp" %}" alt="Homepage banner" class="mw-100">    </a>
+</header>
+
+</body>
+
+<h1>{% trans "Hello, World!" %}</h1>
+{% endblock %}

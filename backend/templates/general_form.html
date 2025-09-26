@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load django_bootstrap5 %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+
+{% block content %}
+<div class="container-fluid"></div>
+<h2>{% translate view.form_title %}</h2>
+<form method="post">
+    {% csrf_token %}
+    {% bootstrap_form form layout='horizontal' %}
+    <button class="btn btn-small btn-primary" type="submit">{% translate view.form_submit %}</button>
+</form>
+</div>
+{% endblock %}

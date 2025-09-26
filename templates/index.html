@@ -1,0 +1,22 @@
+{% load django_vite %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load i18n %}
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="csrf-token" content="{{ csrf_token }}">
+    <title>{% block title %}{% translate 'Task manager' %}{% endblock %}</title>
+    {% vite_hmr_client %}
+    {% vite_asset 'main.tsx' %}
+    {% vite_react_refresh %}
+    {% load django_bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <!-- {% bootstrap_messages %} -->
+</head>
+<body class="d-flex flex-column min-vh-100">
+  {% block inertia %}{% endblock %}
+</body>
+</html>
