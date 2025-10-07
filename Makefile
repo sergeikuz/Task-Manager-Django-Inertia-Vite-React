@@ -39,3 +39,8 @@ test-pytest:
 test-coverage:
 	uv run pytest --cov=backend --cov-report=xml:coverage.xml
 
+start-backend:
+	uv run manage.py runserver
+
+start-frontend:
+	cd frontend && uv run npm run dev
