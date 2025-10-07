@@ -1,51 +1,83 @@
 from django.contrib import messages
-from django.core.exceptions import ValidationError
-from django.shortcuts import redirect
-from django.urls import reverse_lazy
+from django.shortcuts import get_object_or_404
 from django.utils.translation import gettext_lazy as _
 from django.views.generic import CreateView, DeleteView, ListView, UpdateView
+from inertia import location
+from inertia import render as inertia_render
 
 from backend.mixins import CustomLoginRequiredMixin
+from backend.tasks.models import Task
 
 from .forms import StatusForm
 from .models import Status
 
-SUCCESS_URL = "statuses:statuses_index"
-
 
 class StatusesIndexView(CustomLoginRequiredMixin, ListView):
     model = Status
-    template_name = "statuses/statuses_index.html"
-    context_object_name = "statuses"
+    
+    def get(self, request):
+        try:
+            statuses = Status.objects.all()
+            return inertia_render(
+                request,
+                "Statuses",
+                props={"statuses": statuses}
+            )
+        except Exception as e:
+            return inertia_render(
+                request,
+                "Error",
+                props={"error": str(e)}
+            )
 
 
 class StatusesCreateView(CustomLoginRequiredMixin, CreateView):
     form_class = StatusForm
-    template_name = 'general_form.html'
-    success_url = reverse_lazy(SUCCESS_URL)
     success_message = _("The status was created successfully")
-    form_title = _("Create status")
-    form_submit = _("Create")
 
-    def form_valid(self, form):
-        response = super().form_valid(form)
-        messages.success(self.request, self.success_message)
-        return response
+    def get(self, request, *args, **kwargs):
+        return inertia_render(request, "StatusesCreate", props={})
+
+    def post(self, request, *args, **kwargs):
+        form = self.form_class(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, self.success_message)
+            return location("/statuses/")
+        
+        return inertia_render(
+            request, 
+            "StatusesCreate", 
+            props={
+                "error": f"{form.errors.as_text()}",
+            }
+        )
 
 
 class StatusesUpdateView(CustomLoginRequiredMixin, UpdateView):
     form_class = StatusForm
     model = Status
-    template_name = 'general_form.html'
-    success_url = reverse_lazy(SUCCESS_URL)
     success_message = _("The status was updated successfully")
-    form_title = _("Edit stutus")
-    form_submit = _("Edit")
 
-    def form_valid(self, form):
-        response = super().form_valid(form)
-        messages.success(self.request, self.success_message)
-        return response
+    def get(self, request, *args, **kwargs):
+        status = get_object_or_404(Status, pk=kwargs['pk'])
+        return inertia_render(
+            request, 
+            "StatusesUpdate", 
+            props={"status": status}
+        )
+
+    def post(self, request, *args, **kwargs):
+        status = get_object_or_404(Status, pk=kwargs['pk'])
+        form = self.form_class(request.POST, instance=status)
+        
+        if form.is_valid():
+            form.save()
+            messages.success(request, self.success_message)
+            return location("/statuses/")
+        
+        data = {"status": status, "error": f"{form.errors.as_text()}"}
+        return inertia_render(request, "StatusesUpdate", props=data)
 
 
 class StatusesDeleteView(
@@ -53,17 +85,25 @@ class StatusesDeleteView(
     DeleteView
 ):
     model = Status
-    template_name = 'general_delete_form.html'
-    success_url = reverse_lazy(SUCCESS_URL)
     success_delete_message = _("The status was deleted successfully")
     error_delete_message = _("Cannot delete status because it is in use.")
-    form_title = _("Delete status")
 
-    def form_valid(self, form):
-        self.object = self.get_object()
-        try:
-            self.object.delete()
-            messages.success(self.request, self.success_delete_message)
-        except ValidationError:
-            messages.error(self.request, self.error_delete_message)
-        return redirect(self.success_url)
+    def get(self, request, *args, **kwargs):
+        status = get_object_or_404(Status, pk=kwargs['pk'])
+        return inertia_render(
+            request, 
+            "StatusesDelete", 
+            props={"status": status}
+        )
+    
+    def post(self, request, *args, **kwargs):
+        status = get_object_or_404(Status, pk=kwargs['pk'])
+        
+        if Task.objects.filter(status=status).exists():
+            messages.error(
+                request, self.error_delete_message
+            )
+            return location("/statuses/")
+        status.delete()
+        messages.success(request, self.success_delete_message)
+        return location("/statuses/")
